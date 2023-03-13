@@ -12,6 +12,7 @@ import {
     AcUnit as AcUnitIcon  , 
     Close as CloseIcon , 
     Settings as SettingsIcon , 
+    Refresh as RefreshIcon , 
 } from "@mui/icons-material"
 import {
     get_chat , 
@@ -276,6 +277,11 @@ class App extends React.Component<{} , {
                     sx = {{width: "100%"}}
                     size = "small"
                 />
+                <AutoTooltip title="刷新"><IconButton onClick = {()=>{
+                    me.setState({history: []})
+                }}>
+                    <RefreshIcon fontSize = "small"/>
+                </IconButton></AutoTooltip>
                 <AutoTooltip title="打开设置文件"><IconButton onClick = {()=>{
                     let W = window as any
                     if(W.electronAPI){
